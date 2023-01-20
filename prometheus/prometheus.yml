@@ -34,6 +34,23 @@ scrape_configs:
     static_configs:
       - targets: ['pushgateway:9091']
 
+  - job_name: 'spring-actuator-vm-1'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['springboot-jvm-1:8081']
+  
+  - job_name: 'spring-actuator-vm-2'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['springboot-jvm-2:8082']
+
+  - job_name: 'spring-actuator-vm-3'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['springboot-jvm-3:8083']
 
 alerting:
   alertmanagers:

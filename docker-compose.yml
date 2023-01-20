@@ -137,3 +137,43 @@ services:
       - monitor-net
     labels:
       org.label-schema.group: "monitoring"
+
+  springboot-docker-compose-app-container-1:
+    image: springboot-docker-compose-app-1:1
+    container_name: springboot-jvm-1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/springboot-docker-compose-app-1
+    networks:
+      - monitor-net
+    ports:
+      - "8081:8081"
+
+  springboot-docker-compose-app-container-2:
+    image: springboot-docker-compose-app-2:1
+    container_name: springboot-jvm-2
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/springboot-docker-compose-app-2
+    networks:
+      - monitor-net
+    ports:
+      - "8082:8082"
+
+  springboot-docker-compose-app-container-3:
+    image: springboot-docker-compose-app-3:1
+    container_name: springboot-jvm-3
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/springboot-docker-compose-app-3
+    networks:
+      - monitor-net
+    ports:
+      - "8083:8083"
+
