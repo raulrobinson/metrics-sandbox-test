@@ -7,11 +7,27 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 
 ## Install
 
-Clone this repository on your Docker host, cd into dockprom directory and run compose up:
+Clone this repository on your Docker host, cd into metrics-sandbox-test directory and run compose up:
+
+```text
+- Individual Test
+docker run -it --name=sb-docker -p 8081:8081 spring-boot-docker
+```
+
+```text
+cd .\jvm-spring-1
+docker build -t springboot-docker-compose-app-1:1 .
+
+cd .\jvm-spring-2
+docker build -t springboot-docker-compose-app-2:1 .
+
+cd .\jvm-spring-3
+docker build -t springboot-docker-compose-app-3:1 .
+```
 
 ```bash
-git clone https://github.com/raulrobinson/metricas-telefonica
-cd metricas-telefonica
+git clone https://github.com/raulrobinson/metrics-sandbox-test
+cd metrics-sandbox-test
 
 ADMIN_USER='admin' ADMIN_PASSWORD='admin' ADMIN_PASSWORD_HASH='$2a$14$1l.IozJx7xQRVmlkEQ32OeEEfP5mRxTpbDTCTcXRqn19gXD8YK1pO' 
 docker-compose up -d
