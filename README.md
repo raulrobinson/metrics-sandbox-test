@@ -94,7 +94,7 @@ Grafana is preconfigured with dashboards and Prometheus as the default data sour
 
 ***Docker Host Dashboard***
 
-![Host](https://raw.githubusercontent.com/stefanprodan/dockprom/master/screens/Grafana_Docker_Host.png)
+![Host](Grafana_Docker_Host.png)
 
 The Docker Host Dashboard shows key metrics for monitoring the resource usage of your server:
 
@@ -123,7 +123,7 @@ node_filesystem_free_bytes
 
 ***Docker Containers Dashboard***
 
-![Containers](https://raw.githubusercontent.com/stefanprodan/dockprom/master/screens/Grafana_Docker_Containers.png)
+![Containers](Grafana_Docker_Containers.png)
 
 The Docker Containers Dashboard shows key metrics for monitoring running containers:
 
@@ -155,7 +155,7 @@ node_filesystem_free_bytes
 
 ***Monitor Services Dashboard***
 
-![Monitor Services](https://raw.githubusercontent.com/stefanprodan/dockprom/master/screens/Grafana_Prometheus.png)
+![Monitor Services](Grafana_Prometheus.png)
 
 The Monitor Services Dashboard shows key metrics for monitoring the containers that make up the monitoring stack:
 
@@ -170,11 +170,11 @@ The Monitor Services Dashboard shows key metrics for monitoring the containers t
 
 ## Define alerts
 
-Three alert groups have been setup within the [alert.rules](https://github.com/stefanprodan/dockprom/blob/master/prometheus/alert.rules) configuration file:
+Three alert groups have been setup within the [alert.rules](https://github.com/raulrobinson/metrics-sandbox-test/blob/master/prometheus/alert.rules) configuration file:
 
-* Monitoring services alerts [targets](https://github.com/stefanprodan/dockprom/blob/master/prometheus/alert.rules#L2-L11)
-* Docker Host alerts [host](https://github.com/stefanprodan/dockprom/blob/master/prometheus/alert.rules#L13-L40)
-* Docker Containers alerts [containers](https://github.com/stefanprodan/dockprom/blob/master/prometheus/alert.rules#L42-L69)
+* Monitoring services alerts [targets](https://github.com/raulrobinson/metrics-sandbox-test/blob/master/prometheus/alert.rules#L2-L11)
+* Docker Host alerts [host](https://github.com/raulrobinson/metrics-sandbox-test/blob/master/prometheus/alert.rules#L13-L40)
+* Docker Containers alerts [containers](https://github.com/raulrobinson/metrics-sandbox-test/blob/master/prometheus/alert.rules#L42-L69)
 
 You can modify the alert rules and reload them by making a HTTP POST call to Prometheus:
 
@@ -289,7 +289,7 @@ A complete list of integrations can be found [here](https://prometheus.io/docs/a
 
 You can view and silence notifications by accessing `http://<host-ip>:9093`.
 
-The notification receivers can be configured in [alertmanager/config.yml](https://github.com/stefanprodan/dockprom/blob/master/alertmanager/config.yml) file.
+The notification receivers can be configured in [alertmanager/config.yml](https://github.com/raulrobinson/metrics-sandbox-test/blob/master/alertmanager/config.yml) file.
 
 To receive alerts via Slack you need to make a custom integration by choose ***incoming web hooks*** in your Slack team app page.
 You can find more details on setting up Slack integration [here](http://www.robustperception.io/using-slack-with-the-alertmanager/).
@@ -310,7 +310,7 @@ receivers:
             api_url: 'https://hooks.slack.com/services/<webhook-id>'
 ```
 
-![Slack Notifications](https://raw.githubusercontent.com/stefanprodan/dockprom/master/screens/Slack_Notifications.png)
+![Slack Notifications](https://github.com/raulrobinson/metrics-sandbox-test/master/screens/Slack_Notifications.png)
 
 ## Sending metrics to the Pushgateway
 
